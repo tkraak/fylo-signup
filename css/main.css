@@ -6,10 +6,6 @@ body, h1, p, ul, fieldset {
   padding: 0;
 }
 
-body {
-  display: flex;
-}
-
 h1 {
   font-family: 'Raleway', sans-serif;
   margin: 1em 0;
@@ -22,24 +18,53 @@ p {
   margin: 1em 0;
 }
 
+#split {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 48em) {
+  #split {
+    flex-direction: row;
+  }
+}
+
 section#left {
+  /* background: url(../assets/img/bg-intro.svg); */
+  /* background-size: cover; */
   background: hsl(228, 45%, 44%);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 50vw;
 }
 
-section#right {
-  width: 50vw;
+@media (min-width: 48em) {
+  section#left {
+    background: hsl(228, 45%, 44%);
+  }
+
+}
+@media (min-width: 48em) {
+  section#left, section#right {
+    height: 100vh;
+    width: 50vw;
+  }
 }
 
 header {
+  background: hsl(228, 45%, 44%);
   display: flex;
   justify-content: space-between;
-  margin: 2em auto;
-  width: 80%;
+  padding: 2em;
+}
+
+@media (min-width: 48em) {
+  header {
+    background: none;
+    position: absolute;
+    right: 0;
+    width: 43vw;
+  }
 }
 
 header ul {
@@ -100,7 +125,7 @@ form button {
   font-size: 1em;
 	outline: 0;
 	padding: 20px;
-  margin-left: 10px;
+  margin: 20px;
   width: 150px;
 }
 
